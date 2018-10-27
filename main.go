@@ -62,6 +62,7 @@ func main() {
 		renderer.Clear()
 
 		plr.draw(renderer)
+		plr.update()
 
 		// places everything on the screen
 		renderer.Present()
