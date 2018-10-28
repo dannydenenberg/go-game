@@ -44,6 +44,11 @@ func main() {
 		return
 	}
 
+	enemy, err := newBasicEnemy(renderer, screenWidth/2.0, screenHeight/2.0)
+	if err != nil {
+		fmt.Println("creating basic enemy:", err)
+		return
+	}
 	// add an infinite loop just to see the screen up forever
 	for {
 		// consume every event that sdl has detected in its QUEUE
@@ -63,6 +68,8 @@ func main() {
 
 		plr.draw(renderer)
 		plr.update()
+
+		enemy.draw(renderer)
 
 		// places everything on the screen
 		renderer.Present()
